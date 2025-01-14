@@ -13,14 +13,15 @@ function App() {
 
   const apiUrl = 'https://api.themoviedb.org/3';
   const apiKey = 'fbe4ea995a8f388e9c32dd3d1b507529';
+  
 
 
 
   useEffect(() => {
-   
+
   }, [valueSearch]);
 
-  function getMovie () {
+  function getMovie() {
     axios.get(`${apiUrl}/search/movie`, {
       params: {
         api_key: apiKey,
@@ -29,7 +30,7 @@ function App() {
     }).then((resp) => {
       setPost(resp.data.results)
       console.log(resp);
-      
+
     });
   }
 
@@ -41,7 +42,7 @@ function App() {
       }
     }).then((resp) => {
       setPost(resp.data.results)
-      console.log(resp.data.results)
+      console.log(resp)
     });
   }
 
@@ -62,12 +63,13 @@ function App() {
 
       <section>
         {post.map((curItem) =>
-        <AppCard
-        key={curItem.id}
-        title={curItem.title || curItem.name }
-        originalTitle={curItem.original_title || curItem.name}
-        lang={curItem.original_language}
-        vote={curItem.vote_average}
+          <AppCard
+            key={curItem.id}
+            title={curItem.title || curItem.name}
+            originalTitle={curItem.original_title || curItem.name}
+            lang={curItem.original_language}
+            vote={curItem.vote_average}
+            image={curItem.poster_path}
         />
         )}
       </section>

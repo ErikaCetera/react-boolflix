@@ -1,20 +1,30 @@
- import flagLang from "../../data";
- 
- function AppCard({title, originalTitle, lang, vote}) {
-    const flagPath = flagLang[lang] || 'images/flags/placeholder.png';
+import flagLang from "../../data";
 
-    return(
+function AppCard({ title, originalTitle, lang, vote, image }) {
+
+    const flagPath = flagLang[lang] || 'images/flags/placeholder.png';
+    const TmdbUrl = "https://image.tmdb.org/t/p/w185";
+    
+
+    return (
         <>
-        <div>
-            <h3>Titolo: {title}</h3>
-            <h4>Titolo originale: {originalTitle}</h4>
-            <img className="flag" src={flagPath} alt="" />
-            <p>Voto: {Math.ceil(vote)}</p>
-        </div>
-        
+            <div >
+                <div>
+                 <img src={`${TmdbUrl}${image}`} alt="" /> 
+                </div>
+
+                <div >
+                    <h3>Titolo: {title}</h3>
+                    <h4>Titolo originale: {originalTitle}</h4>
+                    <img className="flag" src={flagPath} alt="" />
+                    <p>Voto: {Math.ceil(vote)}</p>
+                </div>
+
+            </div>
+
         </>
     )
-    
- }
 
- export default AppCard;
+}
+
+export default AppCard;
