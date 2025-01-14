@@ -17,8 +17,7 @@ function App() {
 
 
   useEffect(() => {
-    getMovie();
-    getSeries();
+   
   }, [valueSearch]);
 
   function getMovie () {
@@ -49,6 +48,7 @@ function App() {
   function handleChange() {
     getMovie();
     getSeries();
+    setValueSearch('');
   }
   return (
     <>
@@ -64,12 +64,10 @@ function App() {
         {post.map((curItem) =>
         <AppCard
         key={curItem.id}
-        title={curItem.title}
-        originalTitle={curItem.original_title}
+        title={curItem.title || curItem.name }
+        originalTitle={curItem.original_title || curItem.name}
         lang={curItem.original_language}
-        vote={curItem.vote_average
-        }
-
+        vote={curItem.vote_average}
         />
         )}
       </section>

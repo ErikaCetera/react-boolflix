@@ -6,6 +6,7 @@ function SearchBar ({valueSearch, setValueSearch, handleChange}){
       type = 'search'
       value = {valueSearch}
       onChange = {(event) => setValueSearch(event.target.value)}
+      autocomplete="off"
       />
       
       <button onClick={handleChange}> Cerca</button>
