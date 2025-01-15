@@ -17,7 +17,7 @@ function AppCard({ title, originalTitle, lang, vote, image }) {
                     <h3>Titolo: {title}</h3>
                     <h4>Titolo originale: {originalTitle}</h4>
                     <img className="flag" src={flagPath} alt="" />
-                    <p>Voto: {Math.ceil(vote)}</p>
+                    <p>Voto: {Math.ceil(vote / 2)}</p>
                 </div>
 
             </div>

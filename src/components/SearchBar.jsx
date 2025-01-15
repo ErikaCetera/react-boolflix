@@ -1,4 +1,4 @@
-function SearchBar ({valueSearch, setValueSearch, handleChange}){
+function SearchBar ({valueSearch, setValueSearch, handleAll, handleKey}){
     return(
         <>
         <h1>Cerca film e serie tv</h1>
@@ -7,9 +7,10 @@ function SearchBar ({valueSearch, setValueSearch, handleChange}){
       value = {valueSearch}
       onChange = {(event) => setValueSearch(event.target.value)}
       autoComplete="off"
+      onKeyUp={handleKey}
       />
       
-      <button onClick={handleChange}> Cerca</button>
+      <button onClick={handleAll}> Cerca</button>
       </>
     )
 }
