@@ -1,16 +1,17 @@
+import React from 'react';
 import AppMoviesAndSeries from "./AppMoviesAndSeries"
 
 function AppMain({ movies, series }) {
     return (
         <main>
-            <section>
-                <AppMoviesAndSeries post={movies}
-                    sectionTitle='Film' />
-            </section>
-            <section>
-                <AppMoviesAndSeries post={series}
-                    sectionTitle='Serie Tv' />
-            </section>
+            <div className='container'>
+                    
+                    <AppMoviesAndSeries post={movies}
+                        sectionTitle='Film' />
+                
+                    <AppMoviesAndSeries post={series}
+                        sectionTitle='Serie Tv' />
+            </div>
         </main>
     )
 }

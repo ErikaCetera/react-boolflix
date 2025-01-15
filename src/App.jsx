@@ -1,10 +1,11 @@
 import axios from "axios"
 import { useState } from "react";
 import { useEffect } from "react";
-import AppCard from "./components/AppCard";
 import AppHeader from "./components/AppHeader";
 import { GlobalProvider } from "./context/GlobalContext";
 import AppMain from "./components/AppMain";
+
+
 
 
 
@@ -66,7 +67,7 @@ function App() {
   return (
     <>
     <GlobalProvider>
-        <AppHeader
+    <AppHeader
         valueSearch={valueSearch} 
         setValueSearch={setValueSearch} 
         handleAll={handleAll} 
@@ -74,7 +75,8 @@ function App() {
        
        <AppMain
        movies={movies}
-       series={series}/>
+       series={series}
+       />
 
       </GlobalProvider>
     </>
